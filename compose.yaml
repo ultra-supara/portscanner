@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: ./bind/Dockerfile
-    container_name: seccamp-bind
+    container_name: bind
     tty: true
     cap_add:
       - ALL
@@ -16,10 +16,10 @@ services:
       - "127.0.0.1:53:53/udp"
 
   postgres:
-    build: 
+    build:
       context: .
       dockerfile: ./postgres/Dockerfile
-    container_name: seccamp-postgres
+    container_name: postgres
     tty: true
     cap_add:
       - ALL
@@ -31,10 +31,10 @@ services:
       - "127.0.0.1:5432:5432"
 
   ssh:
-    build: 
+    build:
       context: .
       dockerfile: ./ssh/Dockerfile
-    container_name: seccamp-ssh
+    container_name: ssh
     tty: true
     cap_add:
       - ALL
@@ -44,12 +44,12 @@ services:
     mac_address: 02:42:0a:08:09:04
     ports:
       - "127.0.0.1:22:22"
-  
+
   pentester:
     build:
       context: .
       dockerfile: ./pentester/Dockerfile
-    container_name: seccamp-pentester
+    container_name: pentester
     tty: true
     cap_add:
       - ALL

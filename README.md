@@ -1,34 +1,26 @@
-# ポートスキャナ自作から始めるペネトレーションテスト入門
-セキュリティ・キャンプ 全国大会 2023で実施された講義中で使用する演習のためのファイルを配布するためのリポジトリです。
-本講義では、演習にDockerコンテナを用います。
+# port scanner for TCP/IP
 
-## 使い方
-
-Dockerコンテナは、次のコマンドで起動できます。
-
+## usage
 ```
 $ docker compose up -d
 ```
 
-開発用に用いるコンテナには、次のコマンドでログインできます。
-sudoコマンドを実行した時に求められるパスワードは、`seccamp`です。
+password : seccamp
 
 ```
-$ docker exec -it seccamp-pentester /bin/bash
+$ docker exec -it pentester /bin/bash
 ```
 
-## 各コンテナの情報
+## infomation for comtainer
 
-|概要 |IPアドレス                         |
+|概要 |IP address                        |
 |:--        |:--                        |
-|BINDサーバ |10.8.9.2 |
-|PostgreSQLサーバ |10.8.9.3 |
-|SSHサーバ |10.8.9.4 |
-|開発用コンテナ |10.8.9.5 |
+|BIND server |10.8.9.2 |
+|PostgreSQL server |10.8.9.3 |
+|SSH server |10.8.9.4 |
+|dev container |10.8.9.5 |
 
 
-## 謝辞
-次のリポジトリを演習環境で使用させていただいております。
-この場を借りてお礼申し上げます。
-
+## Thanks and reference
 - https://github.com/knqyf263/CVE-2020-8617
+- https://github.com/tkmru/seccamp2023-c4
